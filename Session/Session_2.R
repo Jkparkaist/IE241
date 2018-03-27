@@ -13,27 +13,28 @@
   par(mfrow=c(3,1))
   
   # parameter
-  a=rbinom(1000,100,0.8)
-  b=rbinom(1000,1000,0.8)
-  c=rbinom(1000,1000,0.3)
   
-  hist(a,breaks=5,col=c('pink'),border='white',freq=FALSE,main=name1)
-  hist(b,breaks=8,col=c('dark blue'),border='white',freq=FALSE,main=name2)
-  hist(c,breaks=8,col=c('cornflowerblue'),border='white',freq=FALSE,main=name3)
+  a=seq(0,100)
+  b=seq(0,1000)
+  c=seq(0,1000)
+  
+  plot(a,dbinom(a,100,0.8),col=c('pink'),main=name1)
+  plot(b,dbinom(b,1000,0.8),col=c('dark blue'),main=name2)
+  plot(c,dbinom(c,1000,0.3),col=c('cornflowerblue'),main=name3)
 }
 
 # Poisson
 {
   name1=c('Poisson distribution (lambda=10)')
   name2=c('Poisson distribution (lambda=100)')
-  name3=c('Poisson distribution (lambda=1)')
+  name3=c('Poisson distribution (lambda=5)')
   
   par(mfrow=c(3,1))
   
   # parameter
   a=rpois(1000,10)
   b=rpois(1000,100)
-  c=rpois(1000,1)
+  c=rpois(1000,5)
   
   hist(a,col=c('pink'),border='white',freq=FALSE,main=name1)
   hist(b,col=c('dark blue'),border='white',freq=FALSE,main=name2)
@@ -42,16 +43,16 @@
 
 # Geometric
 {
-  name1=c('Geometric distribution (p=0.9)')
-  name2=c('Geometric distribution (p=0.5)')
-  name3=c('Geometric distribution (p=0.1)')
+  name1=c('Geometric distribution (p=0.7)')
+  name2=c('Geometric distribution (p=0.3)')
+  name3=c('Geometric distribution (p=0.01)')
   
   par(mfrow=c(3,1))
   
   # parameter
-  a=rgeom(1000,0.9)
-  b=rgeom(1000,0.5)
-  c=rgeom(1000,0.1)
+  a=rgeom(1000,0.7)
+  b=rgeom(1000,0.3)
+  c=rgeom(1000,0.01)
   
   hist(a,col=c('pink'),border='white',freq=FALSE,main=name1)
   hist(b,col=c('dark blue'),border='white',freq=FALSE,main=name2)
@@ -70,13 +71,13 @@
   par(mfrow=c(3,1))
   
   # parameter
-  a=rnorm(1000,0,1)
-  b=rnorm(1000,0,10)
-  c=rnorm(1000,5,0.1)
+  a=seq(-8,8,length=1000)
+  b=seq(-40,40,length=4000)
+  c=seq(3.5,6.5,length=1000)
   
-  hist(a,col=c('pink'),border='white',freq=FALSE,main=name1)
-  hist(b,col=c('dark blue'),border='white',freq=FALSE,main=name2)
-  hist(c,col=c('cornflowerblue'),border='white',freq=FALSE,main=name3)
+  plot(a,dnorm(a,0,1),col=c('pink'),main=name1)
+  plot(b,dnorm(b,0,10),col=c('pink'),main=name1)
+  plot(c,dnorm(c,5,0.1),col=c('pink'),main=name1)
 }
 
 # Exponential
@@ -222,3 +223,4 @@ hist(d,col=c('cornflowerblue'),border='white',freq=FALSE,main=name4,xlim=c(0,100
   hist(c,col=c('cornflowerblue'),border='white',freq=FALSE,main=name3)
   hist(d,col=c('cornflowerblue'),border='white',freq=FALSE,main=name4)
 }
+
